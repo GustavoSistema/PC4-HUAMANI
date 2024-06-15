@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+h1 {
+    color: #da6a3e; /* Color para el h1 */
+}
+h2 {
+    color: #e03636; /* Color para el h1 */
+}
+
+
+.entrenador {
+    margin-bottom: 20px;
+}
+
+.entrenador-info {
+    display: flex;
+    align-items: center;
+}
+
+.entrenador-info p {
+    margin: 0;
+    margin-right: 20px; 
+}
+
+.pokemons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #da6a3e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.entrenador-info button:first-of-type {
+    background-color: #da6a3e;
+    margin-right: 10px;
+}
+
+
+.entrenador-info button:last-of-type {
+    background-color: #4d5357; 
+}
+
+
+.nuevo-combate button {
+    background-color: #df1515;
+    margin-top: 20px;
+}
+
+
+.selected {
+    background-color: #3cff00;
+}

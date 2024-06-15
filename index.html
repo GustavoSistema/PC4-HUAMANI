@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <title>Practica 04</title>
+    <link rel="stylesheet" href="app/css/css.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ titulo }}</h1>
+        <div v-for="entrenador in entrenadores" :key="entrenador.nombre" class="entrenador">
+            <div class="entrenador-info">
+                <p>{{ entrenador.nombre }}</p>
+                <button @click="mostrarPokemons(entrenador)">Ver Pokemons</button>
+                <button 
+                    @click="seleccionarEntrenador(entrenador)" 
+                    :class="{ selected: isEntrenadorSelected(entrenador) }"
+                >
+                    Seleccionar para combate
+                </button>
+            </div>
+        </div>
+        <div v-if="entrenadorSeleccionado" class="pokemons">
+            <h1>Pokémons de {{ entrenadorSeleccionado.nombre }}</h1>
+            <ul>
+                <li v-for="pokemon in entrenadorSeleccionado.pokemons" :key="pokemon">{{ pokemon }}</li>
+            </ul>
+        </div>
+        <div class="nuevo-combate">
+            <p v-if="entrenador1 && entrenador2">Entrenador 1: {{ getNombreEntrenador(1) }} VS Entrenador 2: {{ getNombreEntrenador(2) }}</p>
+            <button @click="nuevoCombate" :disabled="!entrenador1 || !entrenador2">+ Nuevo Combate</button>
+            <!--<p v-if="combateConfirmado">Se realizará el combate entre {{ getNombreEntrenador(1) }} VS {{ getNombreEntrenador(2) }}</p>-->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app/app.js"></script>
+</body>
+
+</html>
